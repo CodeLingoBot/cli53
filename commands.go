@@ -661,7 +661,7 @@ func batchListAllRecordSets(r53 *route53.Route53, id string, callback func(rrset
 	return nil
 }
 
-// Paginate request to get all record sets.
+// ListAllRecordSets: Paginate request to get all record sets.
 func ListAllRecordSets(r53 *route53.Route53, id string) (rrsets []*route53.ResourceRecordSet, err error) {
 	err = batchListAllRecordSets(r53, id, func(results []*route53.ResourceRecordSet) {
 		rrsets = append(rrsets, results...)
